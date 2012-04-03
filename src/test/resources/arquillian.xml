@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/schema/arquillian
+        http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+	<container qualifier="jboss" default="true">
+		<configuration>
+			<!-- If you want to use the JBOSS_HOME environment variable, just delete 
+				the jbossHome property -->
+			<property name="jbossHome">${JBOSS_HOME:/home/jmesnil/Developer/jboss-as/build/target/jboss-as-7.1.2.Final-SNAPSHOT/}</property>
+			<!-- We use the standalone-full configuration to have HornetQ started 
+				in the AS7 -->
+			<property name="serverConfig">${jboss.server.config.file.name:standalone-full.xml}</property>
+		</configuration>
+	</container>
+
+</arquillian>
